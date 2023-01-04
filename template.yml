@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  enginez-demo
+
+  Sample SAM Template for enginez-demo
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 20
+    Tracing: Active
+  Api:
+    TracingEnabled: True
+
+Resources:
+  ABDemoFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: .
+      Handler: com.poc.lambda.Handler::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 1024

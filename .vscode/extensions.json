@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "hariscodes.vscode-dynamodb",
+        "indexsoftware.rds-data-api"
+    ]
+}
